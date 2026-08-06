@@ -1,0 +1,13 @@
+<resources>
+    <string name="list_cities">Cписок городов</string>
+    <string name="city_information">Информация о городе</string>
+    <string name="search_city_info_hint">Поиск информации о городе</string>
+    <string name="people_short">чел</string>
+    <string name="city_label">Город</string>
+    <string name="country_label">Страна</string>
+    <string name="population_label">Население</string>
+    <string name="search_hint_city_name">Введите название города</string>
+    <string name="retry_button">Попробовать снова</string>
+    <string name="network_error_title">Нет подключения к интернету</string>
+    <string name="network_error_message">Проверьте соединение и попробуйте снова. Без интернета данные не загрузятся</string>
+</resources>
