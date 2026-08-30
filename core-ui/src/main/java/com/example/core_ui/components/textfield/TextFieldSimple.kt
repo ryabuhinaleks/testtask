@@ -56,7 +56,8 @@ fun TextFieldSearchSimple(
             unfocusedTextColor = DesignTheme.colors.textPrimary,
             focusedPlaceholderColor = DesignTheme.colors.textTertiary,
             unfocusedPlaceholderColor = DesignTheme.colors.textTertiary
-        )
+        ),
+        singleLine = true
     )
 }
 

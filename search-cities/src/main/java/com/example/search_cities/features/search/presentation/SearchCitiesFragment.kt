@@ -19,7 +19,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
@@ -85,6 +87,7 @@ class SearchCitiesFragment : BaseFragment() {
         onSearchQueryChanged: (String) -> Unit,
         onLoadMore: () -> Unit,
     ) {
+        val searchQuery = rememberSaveable { mutableStateOf(state.value.searchQuery) }
         Scaffold(
             topBar = {
                 Column {
@@ -100,8 +103,11 @@ class SearchCitiesFragment : BaseFragment() {
                                 vertical = Dimens.padding_8
                             ),
                         placeholder = stringResource(R.string.search_hint_city_name),
-                        value = state.value.searchQuery,
-                        onValueChange = onSearchQueryChanged
+                        value = searchQuery.value,
+                        onValueChange = { newText ->
+                            searchQuery.value = newText
+                            onSearchQueryChanged(newText)
+                        }
                     )
                 }
             },

@@ -50,6 +50,7 @@ internal fun ItemCity(
                 .fillMaxWidth()
                 .height(Dimens.padding_30)
                 .padding(vertical = Dimens.padding_4),
+            maxLines = 1,
             color = DesignTheme.colors.textPrimary,
             style = DesignTheme.typography.subtitle1
         )
